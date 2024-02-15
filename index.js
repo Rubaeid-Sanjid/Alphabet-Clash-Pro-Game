@@ -21,24 +21,16 @@ function handlePressedKey(event) {
   const currentAlphabet = collectedAlphabet.toLowerCase();
 
   if (playerPressedKey === currentAlphabet) {
-    const scoreElement = document.getElementById("score");
-    const currentScore = scoreElement.innerText;
-    let score = parseInt(currentScore);
-    // const newScore = score + 1;
+    let score = getElementValueById("score");
     score++;
-
-    // scoreElement.innerText = newScore;
-    scoreElement.innerText = score;
+    setElementValueById('score', score);
 
     removeKeyColorById(currentAlphabet);
     continueGame();
   } else {
-    const lifeElement = document.getElementById("life");
-    const currentLife = lifeElement.innerText;
-    let life = parseInt(currentLife);
-
+    let life = getElementValueById("life");
     life--;
-    lifeElement.innerText = life;
+    setElementValueById('life', life);
 
     if (life === 0) {
       hideElementById("play-ground");
