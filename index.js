@@ -24,6 +24,10 @@ function handlePressedKey(event){
         continueGame();
         removeKeyColorById(currentAlphabet);
     }
+    else{
+        hideElementById('play-ground');
+        showElementById('score-board');
+    }
 
 }
 document.addEventListener('keyup', handlePressedKey);

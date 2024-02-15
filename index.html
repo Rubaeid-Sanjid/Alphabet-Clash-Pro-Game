@@ -10,28 +10,51 @@
       rel="stylesheet"
       type="text/css"
     />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/c209340058.js" crossorigin="anonymous"></script>
+    <!-- Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/c209340058.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <main class="min-h-screen bg-[#1E1E1E] bg-[url(images/background.png)] bg-no-repeat bg-center">
+    <main
+      class="min-h-screen bg-[#1E1E1E] bg-[url(images/background.png)] bg-no-repeat bg-center"
+    >
       <!-- Home -->
-      <section id="home-screen" class="min-h-screen flex flex-col justify-center ">
+      <section
+        id="home-screen"
+        class="min-h-screen flex flex-col justify-center hidden"
+      >
         <div class="text-white flex flex-col items-center space-y-4">
           <h1 class="text-8xl font-bold uppercase">Alphabet Clash</h1>
-        <p >Unleash Your Keyboard Kung fu: Press "Enter" to Play</p>
-        <button onclick="play()" class="btn">Play Now</button>
+          <p>Unleash Your Keyboard Kung fu: Press "Enter" to Play</p>
+          <button onclick="play()" class="btn">Play Now</button>
         </div>
       </section>
       <!-- Playground -->
       <section id="play-ground" class="hidden">
         <div class="flex flex-col items-center gap-2 pt-20">
-          <div class="artboard artboard-horizontal phone-6 border-[20px] rounded-xl border-[#2C3E50] bg-[#FFFFFFB3]">
+          <div
+            class="artboard artboard-horizontal phone-6 border-[20px] rounded-xl border-[#2C3E50] bg-[#FFFFFFB3]"
+          >
             <div class="flex justify-center">
-              <p class="bg-[#2C3E50] text-white px-6 py-4 rounded-b-xl ">Don't watch keyboard  while playing...</p>
+              <p class="bg-[#2C3E50] text-white px-6 py-4 rounded-b-xl">
+                Don't watch keyboard while playing...
+              </p>
             </div>
             <div class="flex justify-center items-center h-full">
-              <p id="screen-alphabet" class="text-black text-8xl font-bold">Y</p>
+              <p id="screen-alphabet" class="text-black text-8xl font-bold">
+                Y
+              </p>
             </div>
           </div>
           <!-- keyboard -->
@@ -47,7 +70,7 @@
               <kbd id="i" class="kbd">i</kbd>
               <kbd id="o" class="kbd">o</kbd>
               <kbd id="p" class="kbd">p</kbd>
-            </div> 
+            </div>
             <div class="flex justify-center gap-1 my-1 w-full">
               <kbd id="a" class="kbd">a</kbd>
               <kbd id="s" class="kbd">s</kbd>
@@ -58,7 +81,7 @@
               <kbd id="j" class="kbd">j</kbd>
               <kbd id="k" class="kbd">k</kbd>
               <kbd id="l" class="kbd">l</kbd>
-            </div> 
+            </div>
             <div class="flex justify-center gap-1 my-1 w-full">
               <kbd id="z" class="kbd">z</kbd>
               <kbd id="x" class="kbd">x</kbd>
@@ -72,12 +95,29 @@
           </div>
           <!-- score button -->
           <div class="flex justify-between w-3/4">
-            <button class="btn bg-[#894189] text-white rounded-full px-4 border-none">
+            <button
+              class="btn bg-[#894189] text-white rounded-full px-4 border-none"
+            >
               Life
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                />
+              </svg>
               <span>1</span>
             </button>
-            <button class="btn bg-[#360490] text-white rounded-full px-4 border-none">
+            <button
+              class="btn bg-[#360490] text-white rounded-full px-4 border-none"
+            >
               Score
               <i class="fa-solid fa-dollar-sign"></i>
               <span>1</span>
@@ -87,8 +127,21 @@
       </section>
 
       <!-- Final Score -->
-      <section>
-
+      <section
+        id="score-board"
+        class="min-h-screen flex justify-center items-center"
+      >
+        <div>
+          <div class="card w-96 bg-[#d888d8] shadow-xl">
+            <div class="card-body text-white items-center">
+              <h2 class="card-title text-4xl">Score: <span></span></h2>
+              <p>Don't lose hope. Boost up your speed.</p>
+              <div class="card-actions">
+                <button class="btn">Play Again</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <script src="utility.js"></script>
