@@ -2,6 +2,10 @@ function play() {
   hideElementById("home-screen");
   showElementById("play-ground");
   hideElementById("score-board");
+
+  setElementValueById("score", 0);
+  setElementValueById("life", 3);
+
   continueGame();
 }
 
@@ -23,19 +27,30 @@ function handlePressedKey(event) {
   if (playerPressedKey === currentAlphabet) {
     let score = getElementValueById("score");
     score++;
-    setElementValueById('score', score);
+    setElementValueById("score", score);
 
     removeKeyColorById(currentAlphabet);
     continueGame();
   } else {
     let life = getElementValueById("life");
     life--;
-    setElementValueById('life', life);
+    setElementValueById("life", life);
 
     if (life === 0) {
-      hideElementById("play-ground");
-      showElementById("score-board");
+      gameOver();
     }
   }
 }
 document.addEventListener("keyup", handlePressedKey);
+
+function gameOver() {
+  hideElementById("play-ground");
+  showElementById("score-board");
+
+  const finalScore = getElementValueById("score");
+  setElementValueById("final-score", finalScore);
+
+//   const currentAlphabetElement = document.getElementById("screen-alphabet");
+//   const collectedAlphabet = currentAlphabetElement.innerText;
+//   removeKeyColorById(collectedAlphabet);
+}
