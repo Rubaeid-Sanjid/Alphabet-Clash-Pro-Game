@@ -32,7 +32,7 @@
       <!-- Home -->
       <section
         id="home-screen"
-        class="min-h-screen flex flex-col justify-center hidden"
+        class="min-h-screen flex flex-col justify-center"
       >
         <div class="text-white flex flex-col items-center space-y-4">
           <h1 class="text-8xl font-bold uppercase">Alphabet Clash</h1>
@@ -93,8 +93,9 @@
               <kbd class="kbd">/</kbd>
             </div>
           </div>
-          <!-- score button -->
+          <!-- score section -->
           <div class="flex justify-between w-3/4">
+            <!-- life button -->
             <button
               class="btn bg-[#894189] text-white rounded-full px-4 border-none"
             >
@@ -113,14 +114,15 @@
                   d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                 />
               </svg>
-              <span>1</span>
+              <span id="life">3</span>
             </button>
+            <!-- score button -->
             <button
               class="btn bg-[#360490] text-white rounded-full px-4 border-none"
             >
               Score
               <i class="fa-solid fa-dollar-sign"></i>
-              <span>1</span>
+              <span id="score">0</span>
             </button>
           </div>
         </div>
@@ -129,9 +131,9 @@
       <!-- Final Score -->
       <section
         id="score-board"
-        class="min-h-screen flex justify-center items-center"
+        class="hidden"
       >
-        <div>
+        <div class="min-h-screen flex justify-center items-center">
           <div class="card w-96 bg-[#d888d8] shadow-xl">
             <div class="card-body text-white items-center">
               <h2 class="card-title text-4xl">Score: <span></span></h2>
