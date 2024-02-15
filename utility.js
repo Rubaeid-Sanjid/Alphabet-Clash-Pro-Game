@@ -12,6 +12,10 @@ function setKeyColorById(elementId){
     const element = document.getElementById(elementId);
     element.classList.add('bg-orange-400');
 }
+function removeKeyColorById(elementId){
+    const element = document.getElementById(elementId);
+    element.classList.remove('bg-orange-400');
+}
 function generateRandomAlphabet(){
     const allAlphabets = "abcdefghijklmnopqrstuvwxyz";
     const alphabets = allAlphabets.split('');

@@ -6,11 +6,24 @@ function play(){
 
 function continueGame(){
     const alphabet = generateRandomAlphabet();
-    const element = document.getElementById('screen-alphabet');
-    element.innerText = alphabet;
+    const currentAlphabet = document.getElementById('screen-alphabet');
+    currentAlphabet.innerText = alphabet;
 
     setKeyColorById(alphabet);
-
-    document.addEventListener('keyup', )
-    console.log();
 }
+
+
+function handlePressedKey(event){
+    const playerPressedKey = event.key;
+    
+    const currentAlphabetElement = document.getElementById('screen-alphabet');
+    const collectedAlphabet = currentAlphabetElement.innerText;
+    const currentAlphabet = collectedAlphabet.toLowerCase();
+
+    if(playerPressedKey === currentAlphabet){
+        continueGame();
+        removeKeyColorById(currentAlphabet);
+    }
+
+}
+document.addEventListener('keyup', handlePressedKey);
