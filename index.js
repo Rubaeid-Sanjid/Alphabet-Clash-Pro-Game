@@ -50,7 +50,8 @@ function gameOver() {
   const finalScore = getElementValueById("score");
   setElementValueById("final-score", finalScore);
 
-//   const currentAlphabetElement = document.getElementById("screen-alphabet");
-//   const collectedAlphabet = currentAlphabetElement.innerText;
-//   removeKeyColorById(collectedAlphabet);
+  // const currentAlphabet = getElementTextById('screen-alphabet');
+  const alphabetElement = document.getElementById("screen-alphabet");
+  const currentAlphabet = alphabetElement.innerText;
+  removeKeyColorById(currentAlphabet);
 }
