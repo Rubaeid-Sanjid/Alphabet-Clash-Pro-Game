@@ -20,6 +20,10 @@ function continueGame() {
 function handlePressedKey(event) {
   const playerPressedKey = event.key;
 
+  if(playerPressedKey === 'Escape'){
+    gameOver();
+  }
+
   const currentAlphabetElement = document.getElementById("screen-alphabet");
   const collectedAlphabet = currentAlphabetElement.innerText;
   const currentAlphabet = collectedAlphabet.toLowerCase();
